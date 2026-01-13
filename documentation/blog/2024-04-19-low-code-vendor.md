@@ -6,7 +6,6 @@ authors: necati
 tags: [refine, dev-tools]
 image: https://refine.ams3.cdn.digitaloceanspaces.com/blog/2024-04-19-low-code-vendor/social.png
 hide_table_of_contents: false
-is_featured: true
 ---
 
 ## Introduction
