@@ -94,7 +94,7 @@ export const MockRouterProvider = ({
     back: () => {
       return () => undefined;
     },
-    Link: ({ children, to, href, replace: _replace, ...props }) => (
+    Link: ({ children, to, href, ...props }) => (
       <a href={to || href || ""} {...props}>
         {children}
       </a>
