@@ -6,8 +6,6 @@ import type {
   GetOneParams,
   UpdateParams,
   HttpError,
-  GetManyParams,
-  UpdateManyParams,
 } from "@refinedev/core";
 import type { KyResponse } from "ky";
 
@@ -63,29 +61,6 @@ export const defaultCreateDataProviderOptions = {
       _params: GetOneParams,
     ): Promise<Record<string, any>> {
       return await response.json();
-    },
-  },
-  getMany: {
-    getEndpoint(params: GetManyParams) {
-      return `${params.resource}`;
-    },
-    async buildHeaders(params: GetManyParams) {
-      return params.meta?.headers ?? {};
-    },
-    async buildQueryParams(params: GetManyParams) {
-      const queryParams = {
-        ids: params.ids.join(","),
-      };
-
-      return params.meta?.query ?? queryParams;
-    },
-    async mapResponse(
-      response: KyResponse<AnyObject[]>,
-      _params: GetManyParams,
-    ): Promise<AnyObject[]> {
-      const body = await response.json();
-
-      return body;
     },
   },
   create: {
@@ -174,6 +149,20 @@ export const defaultCreateDataProviderOptions = {
     ) {
       return undefined;
     },
+    async transformError(
+      response: KyResponse<AnyObject>,
+      params: DeleteOneParams<any>,
+    ) {
+      const body = await response.json();
+
+      return {
+        message: JSON.stringify({
+          ...body,
+          id: params.id,
+        }),
+        statusCode: response.status,
+      };
+    },
   },
   custom: {
     async buildQueryParams(params: CustomParams<any>) {
@@ -190,6 +179,20 @@ export const defaultCreateDataProviderOptions = {
       _params: CustomParams<any>,
     ) {
       return await response.json();
+    },
+    async transformError(
+      response: KyResponse<AnyObject>,
+      params: CustomParams<any>,
+    ) {
+      const body = await response.json();
+
+      return {
+        message: JSON.stringify({
+          ...body,
+          params,
+        }),
+        statusCode: response.status,
+      };
     },
   },
 };

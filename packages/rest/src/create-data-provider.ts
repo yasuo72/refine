@@ -82,22 +82,39 @@ export const createDataProvider = (
 
         return { data };
       },
-      async getMany(params): Promise<GetManyResponse<any>> {
-        const endpoint = options.getMany.getEndpoint(params);
+      getMany: options.getMany
+        ? async (params): Promise<GetManyResponse<any>> => {
+            const endpoint =
+              options.getMany.getEndpoint?.(params) ?? params.resource;
 
-        const headers = await options.getMany.buildHeaders(params);
+            const headers =
+              (await options.getMany.buildHeaders?.(params)) ?? {};
 
-        const query = await options.getMany.buildQueryParams(params);
+            const query =
+              (await options.getMany.buildQueryParams?.(params)) ?? {};
 
-        const response = await ky(endpoint, {
-          headers,
-          searchParams: qs.stringify(query, { encodeValuesOnly: true }),
-        });
+            const response = await ky(endpoint, {
+              headers,
+              searchParams: qs.stringify(query, { encodeValuesOnly: true }),
+            });
 
-        const data = await options.getMany.mapResponse(response, params);
+            if (response.ok) {
+              const data = await options.getMany.mapResponse(response, params);
 
-        return { data };
-      },
+              return { data };
+            }
+
+            let error;
+
+            if (options.getMany.transformError) {
+              error = await options.getMany.transformError(response, params);
+            } else {
+              error = await response.json();
+            }
+
+            throw error;
+          }
+        : undefined,
       create: async (params): Promise<CreateResponse<any>> => {
         const endpoint = options.create.getEndpoint(params);
 
@@ -251,9 +268,15 @@ export const createDataProvider = (
           searchParams: qs.stringify(query, { encodeValuesOnly: true }),
         });
 
-        const data = await options.deleteOne.mapResponse(response, params);
+        if (response.ok) {
+          const data = await options.deleteOne.mapResponse(response, params);
 
-        return { data };
+          return { data };
+        }
+
+        const error = await options.deleteOne.transformError(response, params);
+
+        throw error;
       },
       deleteMany: options.deleteMany
         ? async (params): Promise<DeleteOneResponse<any>> => {
@@ -314,9 +337,15 @@ export const createDataProvider = (
 
         const response = await client<AnyObject>(url);
 
-        const data = await options.custom.mapResponse(response, params);
+        if (response.ok) {
+          const data = await options.custom.mapResponse(response, params);
 
-        return { data };
+          return { data };
+        }
+
+        const error = await options.custom.transformError(response, params);
+
+        throw error;
       },
       getApiUrl: () => apiURL,
     },
