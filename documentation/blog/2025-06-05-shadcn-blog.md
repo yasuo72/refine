@@ -78,7 +78,7 @@ The structure of Tailwind CSS and the code ownership model of shadcn/ui present 
 
 This 'AI-Ready' architecture, as termed by shadcn/ui's creators, where AI can interact with UI components at their very source, is fundamental. It moves beyond mere compatibility, fostering a development environment where AI can be a genuine collaborator. This combination of Tailwind's declarative nature and shadcn/ui's direct code access makes it easier for AI agents to understand the relationship between design intent and code implementation, and to make targeted modifications with a higher degree of accuracy compared to more abstracted systems.
 
-This profound potential for AI synergy is not just theoretical; it's actively being harnessed. For example, Refine AI, is in advanced stages of integrating shadcn/ui. Here is a sneak peek.
+This profound potential for AI synergy is not just theoretical; it's actively being harnessed. For example, Refine, is in advanced stages of integrating shadcn/ui. Here is a sneak peek.
 
 <div className="centered-image">
  <img src="https://refine.ams3.cdn.digitaloceanspaces.com/blog/2025-06-04-shadcn-ui/shadcn-table.png
@@ -93,4 +93,4 @@ This profound potential for AI synergy is not just theoretical; it's actively be
 
 shadcn/ui represents a notable shift in how developers can integrate and manage UI components. By prioritizing direct code ownership, it offers enhanced control, transparency, and performance. The inherent design, particularly its deep integration with Tailwind CSS and its provision of source code, not only benefits human developers by simplifying customization and reducing bloat but also presents a more conducive environment for emerging AI-assisted development tools. This approach allows for building UI systems that are both highly tailored and potentially more easily understood and manipulated by AI agents, paving the way for more efficient and intelligent development workflows, arguably setting a new standard for how UI libraries can be architected to thrive in an AI-first development landscape.
 
-If you want to be notified when the shadcn/ui is fully integrated into Refine AI and other Refine related news, make sure to sign up at [refine.dev](https://refine.dev)!
+If you want to be notified when the shadcn/ui is fully integrated into Refine and other Refine related news, make sure to sign up at [refine.dev](https://refine.dev)!

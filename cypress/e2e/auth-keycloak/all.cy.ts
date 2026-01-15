@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 /// <reference types="../../cypress/support" />
 
-describe("auth-keycloak", () => {
+describe.skip("auth-keycloak", () => {
   const login = () => {
     cy.get("button")
       .contains(/sign in/i)

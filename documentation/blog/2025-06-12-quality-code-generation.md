@@ -1,6 +1,6 @@
 ---
 title: "Quality Code Generation: Multi-Agent Systems and Token Dilution"
-description: How Refine AI's multi-agent system architecture effectively tackles token dilution, drastically improving code generation quality.
+description: How Refine's multi-agent system architecture effectively tackles token dilution, drastically improving code generation quality.
 slug: quality-code-generation
 authors: youwei
 tags: [ai]
@@ -9,17 +9,17 @@ image: https://refine.ams3.cdn.digitaloceanspaces.com/blog/2025-06-16/cover.png
 hide_table_of_contents: false
 ---
 
-Refine.dev has established itself as a leader in React-based enterprise application development with their open-source framework that streamlines CRUD operations, authentication, and state management. Building on this foundation, Refine AI represents their next evolution—an AI-powered platform that uses natural language to generate production-ready React applications with clean architecture and thoughtful separation of concerns.
+Refine.dev has established itself as a leader in React-based enterprise application development with their open-source framework that streamlines CRUD operations, authentication, and state management. Building on this foundation, Refine represents their next evolution—an AI-powered platform that uses natural language to generate production-ready React applications with clean architecture and thoughtful separation of concerns.
 
-Unlike general-purpose AI coding tools that often produce "unstructured code, ad-hoc logic, randomly chosen libraries," Refine AI follows proven industry best practices to generate maintainable, enterprise-grade code. However, even with this sophisticated approach, we encountered a fundamental challenge: how can AI effectively leverage third-party libraries and complex documentation to build advanced features like dashboards and data analytics?
+Unlike general-purpose AI coding tools that often produce "unstructured code, ad-hoc logic, randomly chosen libraries," Refine follows proven industry best practices to generate maintainable, enterprise-grade code. However, even with this sophisticated approach, we encountered a fundamental challenge: how can AI effectively leverage third-party libraries and complex documentation to build advanced features like dashboards and data analytics?
 
 This technical deep-dive explores our iterative approach to solving token dilution and attention degradation in large language model agents, ultimately achieving a 90% reduction in token consumption while improving code generation quality from 10% to 70% success rate.
 
 ## Problem Definition
 
-Large language models and agents face significant challenges when implementing complex dashboard functionality, data analytics, and leveraging libraries to their full potential due to knowledge gaps in specialized domains and niche features. These models require comprehensive reference documentation to operate effectively. While Refine AI maintains access to its proprietary documentation, it lacks the capability to dynamically access third-party library documentation. Web scraping approaches present substantial limitations including rate limiting, inconsistent documentation structures, and prohibitive scalability constraints when processing comprehensive library ecosystems.
+Large language models and agents face significant challenges when implementing complex dashboard functionality, data analytics, and leveraging libraries to their full potential due to knowledge gaps in specialized domains and niche features. These models require comprehensive reference documentation to operate effectively. While Refine maintains access to its proprietary documentation, it lacks the capability to dynamically access third-party library documentation. Web scraping approaches present substantial limitations including rate limiting, inconsistent documentation structures, and prohibitive scalability constraints when processing comprehensive library ecosystems.
 
-Our proposed solution enables Refine AI to query example projects utilizing specific libraries and extract relevant implementation patterns. The system functions as a retrieval-augmented generation (RAG) database, returning contextually relevant code examples that align with user feature requests.
+Our proposed solution enables Refine to query example projects utilizing specific libraries and extract relevant implementation patterns. The system functions as a retrieval-augmented generation (RAG) database, returning contextually relevant code examples that align with user feature requests.
 
 ## Iteration 1: Single-Shot Reference Retrieval
 
@@ -70,7 +70,7 @@ Despite extensive guideline refinement and constraint implementation, the model'
 
 ## Iteration 3: Isolated Agent Architecture
 
-To address persistent token dilution issues, we introduced a specialized `reference-implementation-agent` operating independently from the primary Refine AI instance. This architectural separation eliminated historical context overhead by providing the agent with only implementation objectives, reducing token inheritance from previous interactions.
+To address persistent token dilution issues, we introduced a specialized `reference-implementation-agent` operating independently from the primary Refine instance. This architectural separation eliminated historical context overhead by providing the agent with only implementation objectives, reducing token inheritance from previous interactions.
 
 <div className="centered-image">
  <img src="https://refine.ams3.cdn.digitaloceanspaces.com/blog/2025-06-16/iteration_3.png
@@ -130,6 +130,6 @@ Error cycle analysis indicates that token dilution creates cascading failure pat
 
 ## Conclusion
 
-Token dilution in large language model systems can be effectively mitigated through microservices-inspired multi-agent architectures that implement divide-and-conquer strategies for complex problem domains. Our distributed approach not only reduces token consumption by over **90%** but also improves code generation quality and reliability, advancing Refine AI toward its objective of generating production-ready enterprise applications that developers can confidently deploy and extend.
+Token dilution in large language model systems can be effectively mitigated through microservices-inspired multi-agent architectures that implement divide-and-conquer strategies for complex problem domains. Our distributed approach not only reduces token consumption by over **90%** but also improves code generation quality and reliability, advancing Refine toward its objective of generating production-ready enterprise applications that developers can confidently deploy and extend.
 
 The success of this architecture suggests broader applicability to other AI-powered development tools facing similar attention and context management challenges. Future work will explore dynamic agent scaling and intelligent task distribution to further optimize resource utilization while maintaining implementation quality.

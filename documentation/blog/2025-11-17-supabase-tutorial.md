@@ -11,7 +11,7 @@ is_featured: true
 
 If you’ve ever wanted to create a backend quickly — with a real database, authentication, storage, and auto-generated APIs — **Supabase** is a practical place to start. It’s open source, runs on top of PostgreSQL, and helps you move from idea to data in minutues.
 
-In this guide, we’ll focus entirely on **setting up your Supabase database** — creating tables, understanding relationships, and preparing your project so that tools like **Refine AI** can generate a working admin panel from it.
+In this guide, we’ll focus entirely on **setting up your Supabase database** — creating tables, understanding relationships, and preparing your project so that tools like **Refine** can generate a working admin panel from it.
 
 No frontend, no API calls — just a clear, simple walkthrough of setting up a real, production-grade database the easy way.
 
@@ -34,7 +34,7 @@ No frontend, no API calls — just a clear, simple walkthrough of setting up a r
 
 ## Step 1: Create a Supabase Project
 
-Start at [supabase.com](https://supabase.com) and click **Start your project**.  
+Start at [supabase.com](https://supabase.com) and click **Start your project**.
 You can sign in using GitHub or any email address.
 
 Once you’re in the dashboard, click **New project** and fill in the details:
@@ -43,7 +43,7 @@ Once you’re in the dashboard, click **New project** and fill in the details:
 - **Password** – this is your database password (keep it safe!)
 - **Region** – choose one close to you or your users
 
-Then click **Create new project**.  
+Then click **Create new project**.
 Within about 30 seconds, you’ll have a live PostgreSQL database running in the cloud — complete with authentication, storage, and instant APIs.
 
 You’ll land on the **project dashboard**, where you’ll see the core sections:
@@ -69,7 +69,7 @@ When you create a new table, you’ll define:
 - **Columns** (fields)
 - **Data types** (text, integer, timestamp, etc.)
 - **Default values** and **constraints**
-- **Relationships** (foreign keys)  
+- **Relationships** (foreign keys)
   Supabase automatically handles the SQL under the hood, and everything you build here instantly becomes accessible through a [REST API](https://supabase.com/docs/guides/api) and [GraphQL](https://supabase.com/docs/guides/api/graphql).
 
 ### Row Level Security (RLS) & Policies (Quick Primer)
@@ -87,7 +87,7 @@ You can always inspect or change RLS via the table’s Policies tab (see the [RL
 
 ## Step 3: Create Your First Table
 
-Let’s create a simple `employees` table — a common resource you might manage later in Refine AI.
+Let’s create a simple `employees` table — a common resource you might manage later in Refine.
 
 1. In the **Table Editor**, click **New Table**.
 2. Name it `employees`.
@@ -125,14 +125,14 @@ Let’s make another table called `departments` so you can see how relationships
 
 ![Supabase Project Editor (3)](https://refine.ams3.cdn.digitaloceanspaces.com/blog/2025-11-17-supabase-tutorial/supabase-tutorial-2.png)
 
-Now go back to your `employees` table and click **Add Column** → name it `department_id`.  
+Now go back to your `employees` table and click **Add Column** → name it `department_id`.
 Set its **type** to `uuid`, and under **Foreign Key**, select **departments → id**. For safer deletes, set the FK behavior to **ON DELETE SET NULL**.
 
 Click **Save** again.
 
 You’ve just created your first relational link — every employee belongs to a department. Supabase automatically handles referential integrity and updates your schema.
 
-This structure is now ready for Refine AI to analyze later and generate fully functional list, create, and edit pages for you.
+This structure is now ready for Refine to analyze later and generate fully functional list, create, and edit pages for you.
 
 ---
 
@@ -156,7 +156,7 @@ Then go to your `employees` table and insert:
 | (auto) | Alice | Engineer      | 85000  | (Engineering id) |
 | (auto) | Bob   | HR Specialist | 60000  | (HR id)          |
 
-Your data is now live.  
+Your data is now live.
 You can view, edit, and filter it right in the dashboard — or query it using SQL in the **SQL Editor** tab.
 
 ---
@@ -196,7 +196,7 @@ correct department into `department_id`.
 
 :::
 
-## This flexibility means you can build relational structures that Refine AI (or any frontend) can use directly.
+## This flexibility means you can build relational structures that Refine (or any frontend) can use directly.
 
 ## Step 7: Enable APIs and Policies
 
@@ -278,13 +278,13 @@ Within minutes, you can have:
 - Realtime APIs
 - Secure authentication
 
-Supabase also works well with **Refine AI** — once your schema is ready, Refine AI can generate an admin UI around it: tables, forms, relationships, and filters.
+Supabase also works well with **Refine** — once your schema is ready, Refine can generate an admin UI around it: tables, forms, relationships, and filters.
 
 ---
 
 ## What to do after
 
-The quickest win now is to connect your Supabase database to Refine AI and generate working internal tools (admin panel, CRUD, filters, relations) from your schema in minutes. See the walkthrough:
+The quickest win now is to connect your Supabase database to Refine and generate working internal tools (admin panel, CRUD, filters, relations) from your schema in minutes. See the walkthrough:
 
 - Build internal tools from your Supabase schema → https://refine.dev/blog/supabase-refine-ai/
 
@@ -297,7 +297,7 @@ The quickest win now is to connect your Supabase database to Refine AI and gener
 - [Supabase Auth](https://supabase.com/docs/guides/auth) – configure access and security policies
 - [Local Development & CLI](https://supabase.com/docs/guides/local-development/overview) – run Supabase locally with migrations
 - [Row Level Security](https://supabase.com/docs/guides/database/postgres/row-level-security) – how to enable and write policies
-- [Refine + Supabase Guide](https://refine.dev/core/docs/guides/supabase) – connect your schema to Refine AI
+- [Refine + Supabase Guide](https://refine.dev/core/docs/guides/supabase) – connect your schema to Refine
 - [Supabase Discord](https://discord.supabase.com) – join the community
 
 ---

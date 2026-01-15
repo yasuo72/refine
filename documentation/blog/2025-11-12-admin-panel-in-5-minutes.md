@@ -11,15 +11,15 @@ is_featured: true
 
 Admin panels are a must for a lot of businesses and teams. From small groups to larger organizations, being able to see all the information at a glance is incredibly helpful. The issue is how long it takes. You might have a lot of resources to wire up, dozens of pages to create and stitch together, and even if you’re using Refine, it can still take a while.
 
-That changed when I started using Refine AI V2 with Supabase.
+That changed when I started using Refine with Supabase.
 
-With Refine AI, your days- or weeks-long admin panel project might be done in minutes.
+With Refine, your days- or weeks-long admin panel project might be done in minutes.
 
 ![zzztweta](https://refine.ams3.cdn.digitaloceanspaces.com/blog/supabase-admin-panel/HR-gif.gif)
 
-_Demo: A finished Refine AI admin panel with resources like employees, expenses, and assets._
+_Demo: A finished Refine admin panel with resources like employees, expenses, and assets._
 
-Supabase gives you a complete PostgreSQL backend—authentication, auto-generated APIs, real-time subscriptions, file storage—all out of the box. Refine AI V2 takes it further: point it at your Supabase database, and it generates a complete admin panel in minutes. Not just scaffolding—actual working CRUD pages, forms, routing, the whole thing.
+Supabase gives you a complete PostgreSQL backend—authentication, auto-generated APIs, real-time subscriptions, file storage—all out of the box. Refine takes it further: point it at your Supabase database, and it generates a complete admin panel in minutes. Not just scaffolding—actual working CRUD pages, forms, routing, the whole thing.
 
 ---
 
@@ -33,9 +33,9 @@ For admin panels specifically, Supabase is ideal because everything you need is 
 
 ---
 
-## What is Refine AI?
+## What is Refine?
 
-Refine AI V2 is an AI-powered tool that generates complete internal tools. You connect it to your database, it analyzes your schema, and then you can chat with it to build exactly what you need. It's like having a developer who knows Refine inside-out and can scaffold pages instantly.
+Refine is an AI-powered tool that generates complete internal tools. You connect it to your database, it analyzes your schema, and then you can chat with it to build exactly what you need. It's like having a developer who knows Refine Core inside-out and can scaffold pages instantly.
 
 The code it generates isn't throw-away prototype code either—it's production-ready React with TypeScript, following best practices, ready to customize.
 
@@ -49,7 +49,7 @@ First, pick your UI framework. For this project, we'll use shadcn/ui, but you ca
 
 ![AI Refine DevTools Wizard](https://refine.ams3.cdn.digitaloceanspaces.com/blog/supabase-admin-panel/choose-framework)
 
-Afterward, it's as simple as connecting your Supabase project to Refine AI—just choose the project you want to use as your backend.
+Afterward, it's as simple as connecting your Supabase project to Refine—just choose the project you want to use as your backend.
 
 ![develop.ai.refine.dev_v2_wizard_dy1oU4xf_backend](https://refine.ams3.cdn.digitaloceanspaces.com/blog/supabase-admin-panel/wizard-backend.png)
 
@@ -59,7 +59,7 @@ If you don't have one, you can also use the sample HR API, which is an almost ex
 
 ### Step 2: Let the AI Analyze Your Database
 
-![DevTools Refine AI Wizard](https://refine.ams3.cdn.digitaloceanspaces.com/blog/supabase-admin-panel/wizard-3.png)
+![DevTools Refine Wizard](https://refine.ams3.cdn.digitaloceanspaces.com/blog/supabase-admin-panel/wizard-3.png)
 
 After you connect to your Supabase database, click Continue and let AI analyze your schema. You can ask it questions or have it make changes, but for this walkthrough, we won't make any edits.
 
@@ -72,9 +72,9 @@ Give your tables a final look before pressing Continue again.
 
 ### Step 3: Generate production-ready code
 
-Now that Refine AI has analyzed our schema thoroughly, we can start generating pages.
+Now that Refine has analyzed our schema thoroughly, we can start generating pages.
 
-![Refine AI project start screen](https://refine.ams3.cdn.digitaloceanspaces.com/blog/supabase-admin-panel/ai-example-1)
+![Refine project start screen](https://refine.ams3.cdn.digitaloceanspaces.com/blog/supabase-admin-panel/ai-example-1)
 _Start screen: "What would you like to do first?" with options like creating an Employee list page with a data table._
 
 You'll be greeted by a page like the one above, and the AI will offer a few options to start your project. You're free to use the chat to give your own instructions, but picking one of the suggested options is usually more than enough.
@@ -84,13 +84,13 @@ For this guide, we'll first create the Employee list page, which appears at the 
 ![Generated Employee list page](https://refine.ams3.cdn.digitaloceanspaces.com/blog/supabase-admin-panel/ai-example-2)
 _Generated Employee list with a data table alongside the chat and follow-up suggestions._
 
-In less than a minute, the AI generates the list resource page, and it's fully explorable. It's as simple as clicking a suggested action or typing what you want. AI will create pages from your resources, and if you don't like the layout or how the data is represented, just tweak it, Refine AI handles the wiring.
+In less than a minute, the AI generates the list resource page, and it's fully explorable. It's as simple as clicking a suggested action or typing what you want. AI will create pages from your resources, and if you don't like the layout or how the data is represented, just tweak it, Refine handles the wiring.
 
 If you simply go with the suggestions, you'll end up with a project like the one below in under an hour.
 
 ![zzztweta](https://refine.ams3.cdn.digitaloceanspaces.com/blog/supabase-admin-panel/HR-gif.gif)
 
-_Demo: A working admin panel created with Refine AI in minutes._
+_Demo: A working admin panel created with Refine in minutes._
 
 Fully working, fully customizable, fully yours—an admin panel built with maintainable, readable code.
 
@@ -100,7 +100,7 @@ Fully working, fully customizable, fully yours—an admin panel built with maint
 
 The process used to be: set up a project, install dependencies, configure the data provider, build the list page, build the create form, build the edit form, build the show page, wire up the routes... repeat for every resource. It's not that hard, but it's time-consuming and honestly kind of boring. Even with Refine, it takes time—time you could spend on other things.
 
-Refine AI changes that. You go from idea to working admin panel in minutes. Your Supabase schema becomes a fully functional admin panel in the blink of an eye.
+Refine changes that. You go from idea to working admin panel in minutes. Your Supabase schema becomes a fully functional admin panel in the blink of an eye.
 
 **You can actually ship things quickly**. Internal tools that would take days? Done in an afternoon. Customer dashboards? Up and running by lunch. MVPs that need to move fast? No problem.
 
@@ -124,7 +124,7 @@ If you're building an admin panel (or need to), try this out. Seriously. It take
 - [Supabase Docs](https://supabase.com/docs) – everything about your backend
 - [Refine Discord](https://discord.gg/refine) – join the community, ask questions, share what you build
 
-Let us know what you build with Refine AI! Share it on Twitter or Discord and tag us!
+Let us know what you build with Refine! Share it on Twitter or Discord and tag us!
 
 ---
 
